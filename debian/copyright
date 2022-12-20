@@ -1,0 +1,33 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: Sylvain Le Gall <sylvain@le-gall.net>,
+                  Maas-Maarten Zeeman <mmzeeman@xs4all.nl>
+
+Files: *
+Copyright: 2002, 2003, Maas-Maarten Zeeman
+           2010, OCamlCore SARL
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this document and the OUnit software ("the Software"), to
+ deal in the Software without restriction, including without
+ limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ The Software is provided ``as is'', without warranty of any kind,
+ express or implied, including but not limited to the warranties of
+ merchantability, fitness for a particular purpose and
+ noninfringement.  In no event shall Maas-Maarten Zeeman be liable for
+ any claim, damages or other liability, whether in an action of
+ contract, tort or otherwise, arising from, out of or in connection
+ with the Software or the use or other dealings in the software.
+
+Files: debian/*
+Copyright: (C) 2006-2010 Sylvain Le Gall
+License: GPL-2+
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.

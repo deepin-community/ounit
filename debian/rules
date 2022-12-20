@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+# debian/rules for ounit package
+# Copyright (C) 2006-2010 Sylvain Le Gall <gildor@debian.org>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+# MA 02110-1301, USA.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+#export DH_OPTIONS=-v
+
+DESTDIR=$(CURDIR)/debian/tmp
+
+include /usr/share/dpkg/pkg-info.mk
+include /usr/share/ocaml/ocamlvars.mk
+
+OCAMLFIND_DESTDIR=$(DESTDIR)/$(OCAML_STDLIB_DIR)
+export OCAMLFIND_DESTDIR
+OCAMLFIND_LDCONF=ignore
+export OCAMLFIND_LDCONF
+
+%:
+	dh $@ --with ocaml
+
+override_dh_auto_build:
+	dune build -p ounit2
+
+override_dh_auto_test:
+	dune runtest -p ounit2
+
+override_dh_auto_install:
+	dune install --destdir=$(DESTDIR) --prefix=/usr --libdir=..$(OCAML_STDLIB_DIR) ounit2
+	rm -f $(DESTDIR)/usr/doc/ounit2/LICENSE.txt
+	mkdir -p $(OCAMLFIND_DESTDIR)
+	$(MAKE) install-ounit version=$(DEB_VERSION_UPSTREAM)

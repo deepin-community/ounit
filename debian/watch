@@ -1,0 +1,2 @@
+version=3
+https://github.com/gildor478/ounit/releases .*/archive/v?(\d[\d.]+)\.tar\.gz

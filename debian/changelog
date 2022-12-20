@@ -1,0 +1,315 @@
+ounit (2.2.3-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 18:02:02 +0800
+
+ounit (2.2.3-2) unstable; urgency=medium
+
+  * Team upload
+  * Comment out AssertCodePosition test (fails on bytecode)
+
+ -- Stéphane Glondu <glondu@debian.org>  Mon, 17 Aug 2020 13:10:28 +0200
+
+ounit (2.2.3-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Remove Lifeng from Uploaders (Closes: #925074)
+  * Bump debhelper compat level to 13
+  * Bump Standards-Version to 4.5.0
+  * Add Rules-Requires-Root: no
+
+ -- Stéphane Glondu <glondu@debian.org>  Mon, 17 Aug 2020 11:56:21 +0200
+
+ounit (2.0.8-2) unstable; urgency=medium
+
+  * Team upload
+  * Remove camlp4 from Build-Depends
+  * Remove Hendrik from Uploaders
+  * Bump Standards-Version to 4.4.0
+  * Bump debhelper compat level to 12
+
+ -- Stéphane Glondu <glondu@debian.org>  Sun, 04 Aug 2019 05:50:48 +0200
+
+ounit (2.0.8-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Bump Standards-Version to 4.1.4, no changes required
+  * Update Vcs-* fields to target Salsa
+  * Update Homepage field
+  * Install .annot, .cmti and .cmt files in -dev package
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Fri, 11 May 2018 12:46:55 +0200
+
+ounit (2.0.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Add ocamlbuild to Build-Depends
+
+ -- Stéphane Glondu <glondu@debian.org>  Sat, 15 Jul 2017 11:38:18 +0200
+
+ounit (2.0.0-1) unstable; urgency=medium
+
+  [ Stéphane Glondu ]
+  * Team upload
+  * Remove myself from Uploaders
+
+  [ Sylvain Le Gall ]
+  * New upstream release.
+  * Standards-Version 3.9.5 (no change)
+  * Distribute some .ml files that have no matching .mli.
+
+ -- Stéphane Glondu <glondu@debian.org>  Sat, 22 Mar 2014 12:27:49 +0100
+
+ounit (1.1.2-3) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Stéphane Glondu <glondu@debian.org>  Tue, 03 Dec 2013 08:49:15 +0100
+
+ounit (1.1.2-3~exp1) experimental; urgency=low
+
+  [ Hendrik Tews ]
+  * silent lintian canonical vcs info
+
+  [ Lifeng Sun ]
+  * Upload to experimental.
+  * libounit-ocaml-dev: depends on ocaml-findlib.
+  * Add myself to Uploaders.
+
+ -- Lifeng Sun <lifongsun@gmail.com>  Wed, 24 Jul 2013 20:17:53 +0800
+
+ounit (1.1.2-2) unstable; urgency=low
+
+  * build depend on ocaml-best-compilers for native compilation
+  * fix FTBFS error on armel
+
+ -- Hendrik Tews <hendrik@askra.de>  Wed, 29 May 2013 14:51:13 +0200
+
+ounit (1.1.2-1) unstable; urgency=low
+
+  [ Sylvain Le Gall ]
+  * Remove Sylvain Le Gall from uploaders
+
+  [ Hendrik Tews ]
+  * New upstream release
+  * install cmx files
+  * remove debian-changes-1.1.0-1 patch and strange changes in _tags
+  * add myself to uploaders
+  * bump standards version
+  * bump debhelper compat level
+
+ -- Hendrik Tews <hendrik@askra.de>  Wed, 22 May 2013 12:15:56 +0200
+
+ounit (1.1.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Switch debian/copyright to format 1.0
+
+ -- Stéphane Glondu <glondu@debian.org>  Thu, 01 Mar 2012 10:07:44 +0100
+
+ounit (1.1.0-3) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Sylvain Le Gall <gildor@debian.org>  Fri, 18 Feb 2011 18:17:09 +0100
+
+ounit (1.1.0-2) experimental; urgency=low
+
+  * Fix "FTBFS: sh: camlp4: not found", add camlp4 to build depends
+    (Closes: #610040)
+
+ -- Sylvain Le Gall <gildor@debian.org>  Sat, 15 Jan 2011 14:40:03 +0100
+
+ounit (1.1.0-1) experimental; urgency=low
+
+  * New upstream release:
+    * Applied patch from Michael Ekstrand concerning stack trace
+      (Closes: #528603)
+    * Update META version field (Closes: #607872)
+    * Update homepage
+  * Rebuild debian/rules using dh and oasis
+  * Upgrade Standards-Version to 3.9.1 (no change)
+  * Use DEP-5 for debian/copyright
+
+ -- Sylvain Le Gall <gildor@debian.org>  Fri, 07 Jan 2011 16:30:09 +0000
+
+ounit (1.0.3-5) unstable; urgency=low
+
+  * Add build-depends on docbook-xml (Closes: #561204)
+
+ -- Sylvain Le Gall <gildor@debian.org>  Tue, 15 Dec 2009 20:54:21 +0000
+
+ounit (1.0.3-4) unstable; urgency=low
+
+  * Add Provides field for dh-ocaml
+  * Use quilt to apply patch valid-docbook
+
+ -- Sylvain Le Gall <gildor@debian.org>  Mon, 14 Dec 2009 23:37:32 +0000
+
+ounit (1.0.3-3) unstable; urgency=low
+
+  [ Sylvain Le Gall ]
+  * Switch packaging to git
+
+  [ Stéphane Glondu ]
+  * Remove unused dpatch stuff
+  * debian/control:
+    - add myself to Uploaders
+    - move to section ocaml
+    - update Standards-Version to 3.8.3
+
+ -- Stéphane Glondu <glondu@debian.org>  Tue, 03 Nov 2009 21:38:03 +0100
+
+ounit (1.0.3-2) unstable; urgency=low
+
+  * Update Standards-Version to 3.8.0:
+    * Add Homepage field
+    * Add README.source
+  * Add build-dependency on dh-ocaml, use rules/ocaml.ml
+  * Upgrade to debhelper 7, use debian/clean
+
+ -- Sylvain Le Gall <gildor@debian.org>  Sat, 28 Feb 2009 19:39:57 +0100
+
+ounit (1.0.3-1) unstable; urgency=low
+
+  * New upstream version
+  * Remove 01_destdir patch, use OCAMLFIND_DESTDIR to define the location of
+    destination file
+
+ -- Sylvain Le Gall <gildor@debian.org>  Tue, 05 Aug 2008 20:42:48 +0000
+
+ounit (1.0.2-8) unstable; urgency=low
+
+  [ Sylvain Le Gall ]
+  * Use ocaml 3.10.0-9 for generating .ocamldoc-apiref automatically
+    (Closes: #484495)
+  * Correct OUnit manual section (now Programming/OCaml)
+  * Upgrade Standards-Version to 3.7.3 (no change)
+
+  [ Stefano Zacchiroli ]
+  * fix vcs-svn field to point just above the debian/ dir
+
+ -- Sylvain Le Gall <gildor@debian.org>  Wed, 04 Jun 2008 17:21:40 +0200
+
+ounit (1.0.2-7) unstable; urgency=low
+
+  * Build for ocaml 3.10.0
+  * Use standard .doc-base.ocamldoc-apiref
+
+ -- Sylvain Le Gall <gildor@debian.org>  Tue, 04 Sep 2007 00:26:46 +0200
+
+ounit (1.0.2-6) experimental; urgency=low
+
+  * Upgrade debian/watch version to 3,
+  * Remove generated files from debian/*.in,
+  * Change email address to gildor@debian.org everywhere
+  * Rebuild for ocaml 3.10.0
+
+ -- Sylvain Le Gall <gildor@debian.org>  Sat, 07 Jul 2007 23:26:26 +0200
+
+ounit (1.0.2-5) unstable; urgency=low
+
+  * Use CDBS for debian/rules,
+  * Upgrade debhelper debian/compat to 5,
+  * Better use debhelper script, add files :
+    - libounit-ocaml-dev.docs,
+    - libounit-ocaml-dev.dirs.in,
+    - libounit-ocaml-dev.install (Closes: #370758),
+    - libounit-ocaml-dev.examples.
+
+ -- Sylvain Le Gall <gildor@debian.org>  Thu, 26 Oct 2006 23:31:47 +0200
+
+ounit (1.0.2-4) unstable; urgency=low
+
+  * Change my email address to gildor@debian.org,
+  * Made debian/control a PHONY target,
+  * Upgrade standards version to 3.7.2 (no change),
+
+ -- Sylvain Le Gall <gildor@debian.org>  Wed, 14 Jun 2006 21:55:46 +0200
+
+ounit (1.0.2-3) unstable; urgency=low
+
+  * Rebuild for OCaml 3.09.1
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Wed, 11 Jan 2006 00:15:39 +0100
+
+ounit (1.0.2-2) unstable; urgency=low
+
+  * Transition to svn-buildpackage
+  * Remove hardcoded OCaml ABI (Closes: #339124)
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Fri,  2 Dec 2005 23:18:37 +0100
+
+ounit (1.0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Downgrade watch version in order to allow QA to use the watch file
+  * Upgrade standards version to 3.6.2.0 (no change)
+  * Change section of documentation from devel to apps/programming
+    (Closes: #310761)
+  * Generate HTML manual using SGML manual (Closes: #256063)
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Wed, 27 Jul 2005 23:44:47 +0200
+
+ounit (1.0.1.a-1) unstable; urgency=medium
+
+  * Use the upstream tarball without modification ( the former tarball was a
+    little bit modified ).
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Tue,  5 Apr 2005 23:56:23 +0200
+
+ounit (1.0.1-3) unstable; urgency=low
+
+  * Transition to ocaml 3.08.3,
+  * The package is now maintained by Sylvain Le Gall
+    <sylvain.le-gall@polytechnique.org>, (changes in control, copyright),
+  * Correct the dependency of the package, according to the
+    debian-ocaml-maintainer policy: now depends on ocaml-nox-3.08.3 rather
+    than ocaml (>=3.08.2),
+  * Clean the rules files,
+  * Use dpatch (debian-ocaml-maintainer common rules),
+  * Add a watch file,
+  * Change the site of download, since the upstream site has moved,
+  * Move to debian policy 3.6.1.0.
+
+ -- Sylvain Le Gall <sylvain.le-gall@polytechnique.org>  Sun,  3 Apr 2005 16:19:29 +0200
+
+ounit (1.0.1-2) unstable; urgency=medium
+
+  * Tightened up deps in control file.
+
+ -- John Goerzen <jgoerzen@complete.org>  Mon, 13 Dec 2004 08:23:54 -0600
+
+ounit (1.0.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Urgency medium; needed rebuild for new OCaml.
+
+ -- John Goerzen <jgoerzen@complete.org>  Mon, 13 Dec 2004 08:17:16 -0600
+
+ounit (1.0.0-4) unstable; urgency=medium
+
+  * Adjusted depends for ocaml 3.08.  Closes: #264136.
+
+ -- John Goerzen <jgoerzen@complete.org>  Sat,  7 Aug 2004 21:25:45 -0500
+
+ounit (1.0.0-3) unstable; urgency=low
+
+  * Rebuilt for OCaml 3.08
+
+ -- John Goerzen <jgoerzen@complete.org>  Tue, 27 Jul 2004 08:46:38 -0500
+
+ounit (1.0.0-2) unstable; urgency=low
+
+  * Corrected mistake with uploading of orig.tar.gz.
+
+ -- John Goerzen <jgoerzen@complete.org>  Fri, 12 Mar 2004 09:24:23 -0600
+
+ounit (1.0.0-1) unstable; urgency=low
+
+  * Initial Release.  Closes: #237551.
+
+ -- John Goerzen <jgoerzen@complete.org>  Thu, 11 Mar 2004 19:28:36 -0600

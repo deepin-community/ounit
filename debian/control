@@ -1,0 +1,33 @@
+Source: ounit
+Section: ocaml
+Priority: optional
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ ocaml-nox (>= 4.04.0),
+ ocaml-findlib,
+ ocaml-dune,
+ dh-ocaml,
+ libxml2-utils
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: https://github.com/gildor478/ounit
+Vcs-Git: https://salsa.debian.org/ocaml-team/ounit.git
+Vcs-Browser: https://salsa.debian.org/ocaml-team/ounit
+
+Package: libounit-ocaml-dev
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Suggests: ocaml-findlib
+Description: Unit testing framework for OCaml
+ OUnit is a unit testing framework for OCaml, imspired
+ by the JUnit tool for Java and the HUnit tool for Haskell.
+ .
+ OUnit is designed to provide a convenient way for you to write tests
+ for your OCaml code.  Tests can be aggregated into test suites, making
+ it easy to both write tests close to the code being examined and
+ execute a comprehensive aggregate set of tests -- or any subset of it.

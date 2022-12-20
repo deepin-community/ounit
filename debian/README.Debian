@@ -1,0 +1,20 @@
+ounit for Debian
+----------------
+
+To build a module using OUnit, use a command like this:
+
+ocamlfind ocamlc -package oUnit -c -o foo.cmo foo.ml
+
+To link an application that uses OUnit:
+
+ocamlfind ocamlc -package oUnit unix.cma oUnit.cma -o app file.cmo
+
+For native code, the commands are:
+
+ocamlfind ocamlopt -package oUnit -c -o foo.cmx foo.ml
+
+and:
+
+ocamlfind ocamlopt -package oUnit unix.cmxa oUnit.cmxa -o app file.cmx
+
+ -- John Goerzen <jgoerzen@complete.org>, Thu, 11 Mar 2004 19:28:36 -0600
