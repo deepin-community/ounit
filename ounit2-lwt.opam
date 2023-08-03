@@ -1,22 +1,33 @@
 opam-version: "2.0"
-maintainer: "Sylvain Le Gall <sylvaini+ocaml@le-gall.net>"
-authors: [ "Sylvain Le Gall" ]
-homepage: "https://github.com/gildor478/ounit"
-dev-repo: "git+https://github.com/gildor478/ounit.git"
-bug-reports: "https://github.com/gildor478/ounit/issues"
-doc: "https://gildor478.github.io/ounit/"
-depends: [
-  "ocaml" {>= "4.04.0"}
-  "dune" {>= "1.11.0"}
-  "lwt"
-  "ounit2" {= version}
-]
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-  ["dune" "build" "@doc" "-p" name "-j" jobs] {with-doc}
-]
-synopsis: "OUnit testing framework (Lwt)"
-description:"""
+synopsis: "OUnit testing framework"
+description: """
 This library contains helper functions for building Lwt tests using OUnit.
 """
+maintainer: ["Sylvain Le Gall <sylvaini+ocaml@le-gall.net>"]
+authors: ["Sylvain Le Gall"]
+license: "MIT"
+homepage: "https://github.com/gildor478/ounit"
+doc: "https://gildor478.github.io/ounit"
+bug-reports: "https://github.com/gildor478/ounit/issues"
+depends: [
+  "dune" {>= "3.0"}
+  "ocaml" {>= "4.04.0"}
+  "lwt" {>= "2.5.2"}
+  "seq"
+  "ounit2" {= version}
+  "odoc" {with-doc}
+]
+build: [
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/gildor478/ounit.git"

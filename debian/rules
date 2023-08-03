@@ -41,7 +41,7 @@ override_dh_auto_test:
 	dune runtest -p ounit2
 
 override_dh_auto_install:
-	dune install --destdir=$(DESTDIR) --prefix=/usr --libdir=..$(OCAML_STDLIB_DIR) ounit2
+	dune install --destdir=$(DESTDIR) --prefix=/usr --libdir=$(OCAML_STDLIB_DIR) ounit2
 	rm -f $(DESTDIR)/usr/doc/ounit2/LICENSE.txt
 	mkdir -p $(OCAMLFIND_DESTDIR)
 	$(MAKE) install-ounit version=$(DEB_VERSION_UPSTREAM)

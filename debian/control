@@ -2,14 +2,15 @@ Source: ounit
 Section: ocaml
 Priority: optional
 Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Uploaders: Julien Puydt <jpuydt@debian.org>
 Build-Depends:
  debhelper-compat (= 13),
- ocaml-nox (>= 4.04.0),
+ ocaml,
  ocaml-findlib,
  ocaml-dune,
  dh-ocaml,
  libxml2-utils
-Standards-Version: 4.5.0
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: https://github.com/gildor478/ounit
 Vcs-Git: https://salsa.debian.org/ocaml-team/ounit.git
