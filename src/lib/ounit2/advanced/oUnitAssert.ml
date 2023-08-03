@@ -50,6 +50,11 @@ let assert_bool msg b =
 let assert_string str =
   if not (str = "") then assert_failure str
 
+let rec seq_of_channel channel () =
+  match input_char channel with
+  | exception End_of_file -> Seq.Nil
+  | char -> Seq.Cons (char, seq_of_channel channel)
+
 let assert_equal ?ctxt ?(cmp = ( = )) ?printer ?pp_diff ?msg expected actual =
   let get_error_string () =
     let res =
@@ -127,7 +132,7 @@ let assert_equal ?ctxt ?(cmp = ( = )) ?printer ?pp_diff ?msg expected actual =
 
 let assert_command
     ?(exit_code=Unix.WEXITED 0)
-    ?(sinput=Stream.of_list [])
+    ?(sinput=Seq.empty)
     ?(foutput=ignore)
     ?(use_stderr=true)
     ?(backtrace=true)
@@ -267,7 +272,7 @@ let assert_command
          let () =
            (* Dump sinput into the process stdin *)
            let buff = Bytes.make 1 ' ' in
-             Stream.iter
+             Seq.iter
                (fun c ->
                   let _i : int =
                     Bytes.set buff 0 c;
@@ -288,7 +293,7 @@ let assert_command
          in
            (* Dump process output to stderr *)
            begin
-             let chn = open_in fn_out in
+             let chn = open_in_bin fn_out in
              let buff = Bytes.make 4096 'X' in
              let len = ref (-1) in
                while !len <> 0 do
@@ -310,9 +315,9 @@ let assert_command
              real_exit_code;
 
            begin
-             let chn = open_in fn_out in
+             let chn = open_in_bin fn_out in
                try
-                 foutput (Stream.of_channel chn)
+                 foutput (seq_of_channel chn)
                with e ->
                  close_in chn;
                  raise e
@@ -347,4 +352,3 @@ let assert_raises ?msg exn (f: unit -> 'a) =
 
       | Some e ->
           assert_equal ?msg ~printer:pexn exn e
-

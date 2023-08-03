@@ -1,3 +1,32 @@
+## v2.2.7 - 2022-02-08
+
+### Fixed
+- Handle end of channel in Seq API.
+  #95, @Leonidas-from-XIV
+
+- Windows and OCaml 5 compatibility.
+  #96, @MisterDA
+
+### Changed
+- Update to Dune 3.0 for newer stanzas and warnings.
+  #96, @MisterDA
+
+## v2.2.6 - 2022-02-08
+
+### Fixed
+- Use package seq to prepare for OCaml 5.00. Thanks to kit-ty-kate.
+
+## v2.2.5 - 2022-01-22
+
+### Fixed
+- Remove Thread.kill call, it was anyway not implemented and now it is
+  officially deprecated. (Closes: #85)
+
+## v2.2.4 - 2020-12-20
+
+### Fixed
+- Skip AssertCodePosition test if no debug symbols are available. (Closes: #21)
+
 ## v2.2.3 - 2020-07-11
 
 ### Changed
@@ -105,19 +134,19 @@
 - fix safe-string compatibility issuesi, thanks to Christoph Spiel
   (Closes: OF#1760, OF#1761)
 - fix some format string errors, thanks to Damien Doligez (Closes: OF#1422)
-- fix backward incompatiblity with OUnit v1 (Closes: OF#1392)
+- fix backward incompatibility with OUnit v1 (Closes: OF#1392)
 
 ## v2.0.0
 
 - major rewrite of all the code!
-- implements a quickfix compatible way of outputing failures, it jumps to
+- implements a quickfix compatible way of outputting failures, it jumps to
   the a position in the logfile to help you debug the problem.
 - better configuration setup: environment variable, command line options,
   configuration files (OUnitConf)
 - improved output of the tests: output HTML report, output JUnit report,
   systematic logging to a file (OUnitLogger*)
 - choose how to run a test: in parallel using processes (auto-detect number
-  of CPU), concurrently using threads or sequentialy as before.
+  of CPU), concurrently using threads or sequentially as before.
 - choose which test to run: just run test in sequence (simple) or run the
   tests that failed in the last run first and skip the success if they are
   still failing (failfirst) (OUnitChooser)
@@ -162,7 +191,7 @@
 - Add backtrace support (Closes: OF#639), thanks to Michael Ekstrand
 - Use OASIS
 - Move to OCaml Forge: http://ounit.forge.ocamlcore.org
-- Maintainance is now done by Sylvain Le Gall (OCamlCore SARL), thanks to
+- Maintenance is now done by Sylvain Le Gall (OCamlCore SARL), thanks to
   Maas-Maarten Zeeman for all his work
 
 ## v1.0.3
@@ -194,7 +223,7 @@
 
 ## v0.0.2
 
-- Added assert_raises which checkes if an exception is raised.
+- Added assert_raises which checks if an exception is raised.
   (thanks go to Keita Yamaguchi, for the idea)
 - Fixed (hopefully) the .depend file
 
